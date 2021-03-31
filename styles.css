@@ -1,0 +1,463 @@
+/* CSS variables / CSS custom properties */
+
+:root{
+    --custom-cube-side-length: 278px;
+    --custom-perspective: 412px;
+    --custom-cube-frame-margin: 70px;
+    --custom-rotateZ-poz: calc(var(--custom-cube-side-length)/2);
+    --custom-rotateZ-neg: calc(var(--custom-cube-side-length)/-2);
+    --theme-color-dark-blue: #040B5E;
+    --theme-color-yellow: #FFE920;
+    --name-color-landscape: #8DE781;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: var(--theme-color-dark-blue);
+}
+
+body{
+    background: url('./blue-wave.svg');
+    background-size: 100%;
+    /* background-position: 50% 110%;  */
+    background-position: 50% 100%; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+main{
+    width: 1000px;  
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+   
+}
+
+#logo{
+    position: absolute;
+    width: 150px;
+
+    top: 70px;
+    left: 21%;
+    transform: translate(-50%, 0);
+}
+
+#logo:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+#logo #circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--theme-color-yellow);
+    border:17px solid var(--theme-color-dark-blue); 
+    border-radius: 50%;
+}
+
+#logo #initials{
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 100px;
+    line-height: 100%;
+}
+
+.box{
+    width: 420px;
+    position: absolute;
+    background: var(--theme-color-yellow);
+    box-shadow: 3px 4px 5px 0px rgba(106,106,106,0.5);
+}
+
+.box:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.box .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cube-placement{
+    position: absolute;
+    z-index: 5;
+    top: 350px;
+    left: 0px;
+}
+
+.cube-controls{
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: row;
+    
+    z-index: 5;
+    opacity: 0.0;
+}
+
+.cube-controls>div:hover{
+    cursor: pointer;
+}
+
+
+.cube-controls #turn-left{
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.cube-controls #turn-right{
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.cube-container{
+    width: 420px;
+    height: 420px;
+    position: absolute;
+}
+
+
+.cube-container .cube-frame {
+    /* We need all these tedious settings for proper outlook */
+    position: relative;
+    margin: var(--custom-cube-frame-margin) ;       
+    width: var(--custom-cube-side-length);
+    height: var(--custom-cube-side-length);
+    perspective: var(--custom-perspective);
+}
+
+
+.cube-container .cube-frame .cube-figure{
+    transform-style: preserve-3d;
+}
+
+
+.cube-container .cube-frame .cube-figure .cube-side{
+    width: var(--custom-cube-side-length);
+    height: var(--custom-cube-side-length);
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-color-yellow);
+    
+    padding: 14px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+
+
+#front-side{
+    transform:translateZ(var(--custom-rotateZ-poz));
+    
+}
+#back-side{
+    transform:translateZ(var(--custom-rotateZ-neg)) rotateY(-180deg);
+    
+}
+#top-side{
+    transform:translateY(var(--custom-rotateZ-neg)) rotateX(-90deg);
+    
+}
+#bottom-side{
+    transform:translateY(var(--custom-rotateZ-poz)) rotateX(-90deg);
+    
+}
+#left-side{
+    transform:translateX(var(--custom-rotateZ-neg)) rotateY(-90deg);
+    
+}
+#right-side{
+    transform:translateX(var(--custom-rotateZ-poz)) rotateY(90deg);
+}
+
+.cube-side.shadow{
+    box-shadow: 2px 2px 3px 0px hsla(0, 0%, 42%, 0.50);
+}
+
+#name{
+    top: 70px;
+    right: 0;
+}
+
+#name .content{
+    
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 160px;
+    font-weight: bold;
+    line-height: 135px;
+}
+
+#name .content #firstName{
+    position: absolute;
+    top: 55px;
+    left: 40px;
+}
+
+#name .content #familyName{
+    position: absolute;
+    top: 186px;
+    left: 40px;
+}
+
+
+#clima{
+    top: 630px;
+    right: 0;
+}
+
+
+#carousel{
+    top: 910px;
+    left: 0;
+}
+
+
+.box .content.project{
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding-top: 35%;
+}
+
+.box .content.project:hover{
+
+    text-shadow:    0 0 10px rgba(0, 247, 255, 0.5),
+                    0 0 20px rgba(0, 247, 255, 0.8),
+                    0 0 40px rgba(0, 247, 255, 0.8),
+                    0 0 80px rgba(0, 247, 255, 0.8),
+                    0 0 120px rgba(0, 255, 242, 0.8);
+
+}       
+
+
+.box .content.project div:first-child{
+    font-size: 72px;  
+    line-height: 72px; 
+}
+.box .content.project div:last-child{
+    font-size: 32px;
+    line-height: 50px;
+    text-decoration: underline;
+       
+}
+ 
+.contacts{
+    position: absolute;
+    top: 1400px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 0 30px 0;
+    font-size: 15px;
+    transform: translate(-50%, 0);
+}
+
+.letter.mobile{
+    display: none;
+}
+
+.letter.tablet-and-desktop{
+    display: block;
+}
+
+@media (max-width: 1099px){
+
+    body{
+        background-position: 50% 100%; 
+    }
+
+    main{
+        width: auto;
+        height: 100%;
+    }
+
+    #logo{
+        position: relative;
+        margin: 20px auto 60px;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .box{
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto 50px;
+    }
+
+    .cube-placement{
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 auto 50px;
+        width: 420px;
+        height: 420px;
+    }
+
+    #carousel{
+        margin-bottom: 60px;
+    }
+
+    .contacts{
+        position: relative;
+        top: 0;
+        color: white;
+    }
+}
+
+@media (max-width: 649px){
+    body{
+        background-size: 150%;
+        background-position: 50% 100%; 
+    }   
+
+    header{
+        background: var(--theme-color-yellow);
+    }
+
+    header #logo{
+        transform: scale(0.5);
+        margin: 0 auto;
+    }
+
+    #name{
+        background-color: transparent;
+        box-shadow: none;
+        width: 100vw;
+        min-height: 200px;
+        height: 35vh;
+        margin: 0;
+    }
+    
+    #name .content{
+        width: 75%;
+        position: relative;
+        margin: 0 auto;
+        padding: 5vh 0;
+        font-size: 80px;
+        line-height: 1;
+    }
+
+    #name .content #firstName{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        text-align: left;
+    }
+
+    #name .content #familyName{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        text-align: right;
+    }
+
+    /* selects every .box element without the first one and also .mobile element */
+    .box{
+        width: auto;
+
+        
+    }
+
+
+    #clima, #carousel{
+        border: 10px solid var(--theme-color-dark-blue);
+        background-color: var(--theme-color-yellow);
+        margin: 0 15px 15px;
+
+        height: 33vh;
+    }
+
+
+    .box .content.project{
+        padding-top: 0%;
+    }
+
+    .box ~ .box  .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box:after{
+        display: none;
+    }
+
+    .letter.mobile{
+        border: 10px solid var(--theme-color-dark-blue);
+        background-color: var(--theme-color-yellow);
+        margin: 0 15px 15px;
+        padding: 15px 0;
+        display: block;
+    }
+
+    .letter.tablet-and-desktop{
+        display: none;
+    }
+
+    .letter.mobile .content{
+        font-family: 'Mr Dafoe', cursive;
+        font-size: 22px;
+        position: relative;
+        height: auto;
+        
+    }
+
+    .letter.mobile .content:hover h1{
+        text-shadow:0 0 10px rgba(0, 247, 255, 0.5),
+                    0 0 20px rgba(0, 247, 255, 0.8),
+                    0 0 40px rgba(0, 247, 255, 0.8),
+                    0 0 80px rgba(0, 247, 255, 0.8),
+                    0 0 120px rgba(0, 255, 242, 0.8);
+    }
+
+    .letter.mobile .content div{
+        position: relative;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 18px;
+        padding: 1%;
+        display: none;
+    }
+  
+    .letter.mobile .content:hover{
+        cursor: pointer;                  
+    }
+
+}
+
+
+@media (orientation: landscape) and (max-width: 649px){
+
+    body{
+        background: none;
+    }
+    
+    .contacts{
+        color: var(--theme-color-dark-blue);
+    }
+
+    #name .content{
+        width: 60%;
+    }
+}
+
+
+ 
