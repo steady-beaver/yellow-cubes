@@ -22,7 +22,6 @@
 body{
     background: url('./blue-wave.svg');
     background-size: 100%;
-    /* background-position: 50% 110%;  */
     background-position: 50% 100%; 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -102,37 +101,48 @@ main{
     width: 420px;
     height: 420px;
     position: absolute;
-    border: solid 1px grey;
     display: flex;
     flex-direction: row;
-    
+    /* put controls on the front */
     z-index: 5;
-    opacity: 0.0;
 }
 
-.cube-controls>div:hover{
+
+/*  #turn-left  &&  #turn-right  */
+
+.cube-controls > div{
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+/* cube controls hover classes */
+
+.cube-controls.prevention > #turn-right:hover,
+.cube-controls.prevention > #turn-left:hover {
+    box-shadow: none;
+}
+
+.cube-controls > div:hover{
     cursor: pointer;
 }
 
-
-.cube-controls #turn-left{
-    content: "";
-    width: 50%;
-    height: 100%;
+.cube-controls > #turn-left:hover {
+    box-shadow: -40px 0px 54px -15px rgba(0,255,242,0.5);
 }
 
-.cube-controls #turn-right{
-    content: "";
-    width: 50%;
-    height: 100%;
+.cube-controls > #turn-right:hover {
+    box-shadow: 40px 0px 54px -15px rgba(0,255,242,0.5);
 }
+
+/* ========================= */
+
 
 .cube-container{
     width: 420px;
     height: 420px;
     position: absolute;
 }
-
 
 .cube-container .cube-frame {
     /* We need all these tedious settings for proper outlook */
@@ -220,15 +230,16 @@ main{
 }
 
 
-#clima{
+#clima-app{
     top: 630px;
     right: 0;
 }
 
 
-#carousel{
+#print-app{
     top: 910px;
     left: 0;
+    margin-bottom: 60px;
 }
 
 
@@ -237,25 +248,25 @@ main{
     padding-top: 35%;
 }
 
-.box .content.project:hover{
+.box .content.project div:hover{
 
     text-shadow:    0 0 10px rgba(0, 247, 255, 0.5),
                     0 0 20px rgba(0, 247, 255, 0.8),
                     0 0 40px rgba(0, 247, 255, 0.8),
                     0 0 80px rgba(0, 247, 255, 0.8),
-                    0 0 120px rgba(0, 255, 242, 0.8);
+                    0 0 120px #00fff2cc;
 
 }       
 
 
-.box .content.project div:first-child{
+.box .content.project .name{
     font-size: 72px;  
     line-height: 72px; 
 }
-.box .content.project div:last-child{
-    font-size: 32px;
+.box .content.project .repo{
+    font-size: 26px;
     line-height: 50px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
        
 }
  
@@ -311,10 +322,6 @@ main{
         margin: 0 auto 50px;
         width: 420px;
         height: 420px;
-    }
-
-    #carousel{
-        margin-bottom: 60px;
     }
 
     .contacts{
@@ -379,7 +386,7 @@ main{
     }
 
 
-    #clima, #carousel{
+    #clima-app, #print-app{
         border: 10px solid var(--theme-color-dark-blue);
         background-color: var(--theme-color-yellow);
         margin: 0 15px 15px;
