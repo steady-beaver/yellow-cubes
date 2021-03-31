@@ -128,11 +128,13 @@ main{
 }
 
 .cube-controls > #turn-left:hover {
-    box-shadow: -40px 0px 54px -15px rgba(0,255,242,0.5);
+    box-shadow: -40px 0px 70px -30px rgba(117, 252, 39, 1);
 }
 
 .cube-controls > #turn-right:hover {
-    box-shadow: 40px 0px 54px -15px rgba(0,255,242,0.5);
+    /* box-shadow: 40px 0px 54px -15px rgba(0,255,242,0.5); */
+    box-shadow: 40px 0px 70px -30px rgba(117, 252, 39, 1);
+    
 }
 
 /* ========================= */
@@ -250,11 +252,17 @@ main{
 
 .box .content.project div:hover{
 
-    text-shadow:    0 0 10px rgba(0, 247, 255, 0.5),
+    text-shadow:    0 0 10px rgba(117, 252, 39, 1),
+                    0 0 20px rgba(117, 252, 39, 1),
+                    0 0 40px rgba(117, 252, 39, 1),
+                    0 0 80px rgba(117, 252, 39, 1),
+                    0 0 120px rgba(117, 252, 39, 1);
+    
+                    /* text-shadow:    0 0 10px rgba(0, 247, 255, 0.5),
                     0 0 20px rgba(0, 247, 255, 0.8),
                     0 0 40px rgba(0, 247, 255, 0.8),
                     0 0 80px rgba(0, 247, 255, 0.8),
-                    0 0 120px #00fff2cc;
+                    0 0 120px #00fff2cc; */
 
 }       
 

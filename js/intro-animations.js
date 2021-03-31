@@ -5,8 +5,8 @@ function cubes() {
     timeline
         .from('#name', { x: '100vw' })
         .from('.letter', { x: '-100vw' }, '<0.15')
-        .from('#clima', { x: '100vw' }, '<0.15')
-        .from('#carousel', {x: '-100vw'}, '<0.15')
+        .from('#clima-app', { x: '100vw' }, '<0.15')
+        .from('#print-app', {x: '-100vw'}, '<0.15')
         .from('#firstName', { x: '100vw' }, '<-0.15')
         .from('#familyName', { x: '100vw' }, '<');
 
