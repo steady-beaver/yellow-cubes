@@ -13,7 +13,6 @@ tl
     mobileLetterContentElem.animation = tl; 
 
 mobileLetterContentElem.addEventListener('click', function () {
-    console.log("GSAP in tha house")
     mobileLetterContentElem.animation.reversed(!mobileLetterContentElem.animation.reversed());
 })
 

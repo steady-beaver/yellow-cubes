@@ -114,6 +114,8 @@ main{
     content: "";
     width: 50%;
     height: 100%;
+
+    transition: 0.15s;
 }
 
 /* cube controls hover classes */
@@ -177,6 +179,15 @@ main{
     text-align: left;
 }
 
+.cube-container .cube-frame .cube-figure .cube-side img{
+    /* width: 100%; */
+    height: 95%;
+    border: 1px solid rgba(106,106,106,0.5);
+}
+
+.cube-container .cube-frame .cube-figure .cube-side div{
+    text-align: left;
+}
 
 #front-side{
     transform:translateZ(var(--custom-rotateZ-poz));
@@ -248,6 +259,10 @@ main{
 .box .content.project{
     font-family: 'PT Sans Narrow', sans-serif;
     padding-top: 35%;
+}
+
+.box .content.project div{
+    transition: 0.15s;
 }
 
 .box .content.project div:hover{

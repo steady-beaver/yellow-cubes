@@ -2,8 +2,10 @@ var angle = 360
 var cubeFig = $('.cube-figure')
 
 var cubeControls = document.querySelector('.cube-controls')
-var turnLeft = document.querySelector('.cube-controls #turn-left')
-var turnRight = document.querySelector('.cube-controls #turn-right')
+
+// clicking left side turns cube right and vise versa!
+var turnLeft = document.querySelector('.cube-controls #turn-right')
+var turnRight = document.querySelector('.cube-controls #turn-left')
 
 
 function isProtected() {
